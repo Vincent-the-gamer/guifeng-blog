@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="诡锋的博客">
+    <meta name="description" content="一个喜欢写代码的主机游戏玩家">
+    <meta name="author" content="诡锋">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://vincent-the-gamer.gitee.io/guifeng-blog/2023/02/25/使用vue做一个自己的网站吧/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="使用Vue做一个属于自己的网站吧！">
+    <meta property="og:description" content="一个喜欢写代码的主机游戏玩家">
+    <meta property="og:url" content="https://vincent-the-gamer.gitee.io/guifeng-blog2023/02/25/使用Vue做一个自己的网站吧/">
+    <meta property="og:image" content="/images/touxiang.jpeg">
+    <meta property="og:site_name" content="诡锋的博客">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="使用Vue做一个属于自己的网站吧！">
+    <meta name="twitter:description" content="一个喜欢写代码的主机游戏玩家">
+    <meta name="twitter:image" content="/images/touxiang.jpeg">
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/touxiang.jpeg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/touxiang.jpeg">
+    <meta name="theme-color" content="violet">
+    <link rel="shortcut icon" href="/guifeng-blog/images/touxiang.jpeg">
+    
+    <title>
+        
+            使用Vue做一个属于自己的网站吧！ -
+        
+        诡锋的博客
+    </title>
+    
+<link rel="stylesheet" href="/guifeng-blog/css/style.css">
+
+    
+<link rel="stylesheet" href="/guifeng-blog/assets/fonts.css">
+
+    
+    
+    
+        
+            
+                
+                    <script data-pjax src="/guifeng-blog/live2d-widget/autoload.js"></script>
+                
+    
+            
+    
+    
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"vincent-the-gamer.gitee.io","root":"/guifeng-blog/","language":"zh-CN","path":"search.xml"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"violet","avatar":"/images/touxiang.jpeg","favicon":"/images/touxiang.jpeg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"deepskyblue","right":"violet","transparency":50},"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_image":{"light":"/guifeng-blog/images/background.webp","dark":"/guifeng-blog/images/background.webp"},"title_color":{"light":"rgb(255, 46, 113)","dark":"yellow"},"description":"<h2>诡锋 (Vincent)</h2><h5>主机游戏玩家，编程爱好者</h5>","custom_font":{"enable":false,"font_family":null,"font_url":null}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"mac","custom_font":{"enable":false,"font_family":null,"font_url":null}},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.1.3","friend_links":{"columns":2},"home_article":{"date_format":"auto","category":{"enable":true,"limit":8},"tag":{"enable":true,"limit":10}}};
+    REDEFINE.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/guifeng-blog/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/guifeng-blog/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/guifeng-blog/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/guifeng-blog/fontawesome/regular.min.css">
+
+    
+    
+    
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/guifeng-blog/atom.xml" title="诡锋的博客" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="menu-wrapper">
+    
+    <div class="menu-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/guifeng-blog/images/touxiang.jpeg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                诡锋的博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/guifeng-blog/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
+                                    
+                                        
+                                            <i class="fa-solid fa-gear"></i>
+                                        
+                                        小工具&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://font.chinaz.com">字体下载
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    target="_blank" rel="noopener" href="https://github.com/vincent-the-gamer"  >
+                                    
+                                        
+                                            <i class="fa-brands fa-github"></i>
+                                        
+                                        GITHUB
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
+                                    
+                                        
+                                            <i class="fa-solid fa-code"></i>
+                                        
+                                        写代码！&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a href="/guifeng-blog/categories/%E5%89%8D%E7%AB%AF">前端
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
+                                    
+                                        
+                                            <i class="fa-solid fa-gamepad"></i>
+                                        
+                                        玩游戏！&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a href="/guifeng-blog/categories/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5">游戏攻略
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="menu-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/guifeng-blog/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="has-dropdown" 
+                        href="#" onClick="return false;">
+                            
+                                
+                                    <i class="fa-solid fa-gear"></i>
+                                
+                                小工具&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                              
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://font.chinaz.com">字体下载</a>
+                            </li>
+                        
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        target="_blank" rel="noopener" href="https://github.com/vincent-the-gamer"  >
+                             
+                                
+                                    <i class="fa-brands fa-github"></i>
+                                
+                                GITHUB
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="has-dropdown" 
+                        href="#" onClick="return false;">
+                            
+                                
+                                    <i class="fa-solid fa-code"></i>
+                                
+                                写代码！&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                              
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/guifeng-blog/categories/%E5%89%8D%E7%AB%AF">前端</a>
+                            </li>
+                        
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="has-dropdown" 
+                        href="#" onClick="return false;">
+                            
+                                
+                                    <i class="fa-solid fa-gamepad"></i>
+                                
+                                玩游戏！&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                              
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/guifeng-blog/categories/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5">游戏攻略</a>
+                            </li>
+                        
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+             
+                <div class="article-title">         
+                    <img src="https://img-blog.csdnimg.cn/img_convert/bbeecc6629bcdbc7242c352ce00957fe.png" alt="使用Vue做一个属于自己的网站吧！" />
+                    <h1 class="article-title-cover">使用Vue做一个属于自己的网站吧！</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/guifeng-blog/images/touxiang.jpeg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">诡锋</span>
+                            
+                                <span class="author-label"></span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-02-25 17:00</span>
+        <span class="mobile">2023-02-25 17</span>
+        <span class="hover-info">创建时间</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="pc">2023-03-01 23:34:59</span>
+            <span class="mobile">2023-03-01 23:34</span>
+            <span class="hover-info">更新时间</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/guifeng-blog/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/guifeng-blog/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/">框架</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/guifeng-blog/tags/Vue/">Vue</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h2 id="注！意！"><a href="#注！意！" class="headerlink" title="注！意！"></a>注！意！</h2><p>本文是为了只会<strong>前端三件套</strong>（HTML + CSS + JavaScript），但是不会Vue的人准备的，大佬请无视无视ε==(づ′▽`)づ</p>
+<p>不会<strong>前端三件套</strong>的，建议先去学习基础。</p>
+<h2 id="环境搭建！"><a href="#环境搭建！" class="headerlink" title="环境搭建！"></a>环境搭建！</h2><p>咱不再赘述Vue是啥，是干啥的，它奏是个前端框架！！！</p>
+<p>想了解Vue是啥的请看Vue官方文档: <a class="link"   target="_blank" rel="noopener" href="https://vuejs.bootcss.com/guide/" >https://vuejs.bootcss.com/guide/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>啊？你问我前端是啥？别问，问就是：<del>在前面端菜，简称前端</del> 前端一般是指Web前端，也就是使用HTML + CSS + JavaScript来开发的用户界面 (不限于网页，现在还包括各大PC端App和移动端App)。</p>
+<p><strong>注意，前端是Web前端的习惯叫法，不代表前端只有Web前端，比如你用Unity或者虚幻做一个游戏场景和GUI，这也叫前端。</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../images/vue%E6%96%87%E6%A1%A3.png"
+                      alt="Vue中文文档"
+                ></p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>这一步不用说，如果你想真真正正做一个自己的网站，那你必定要用实际开发的方式来写，因为这样会很舒服，你用着外部引入的script标签，然后在html文件里头去写，会很难受</p>
+<p>下载Node.js: <a class="link"   target="_blank" rel="noopener" href="http://nodejs.p2hp.com/" >http://nodejs.p2hp.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>安装过程网上有很多教程，不再赘述，请搜索：Node.js安装教程， 主要注意环境变量的配置（Node.js的安装器好像自带了Add to PATH，无需手动配置)</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../images/nodejs.png"
+                      alt="Node.js中文网"
+                ></p>
+<h4 id="Node换源"><a href="#Node换源" class="headerlink" title="Node换源"></a>Node换源</h4><p>由于咱的网络环境特殊，使用淘宝镜像可以快速安装依赖</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npmmirror.com/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果使用yarn安装依赖包</span></span><br><span class="line">yarn config set registry https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="安装一个代码编辑器"><a href="#安装一个代码编辑器" class="headerlink" title="安装一个代码编辑器"></a>安装一个代码编辑器</h3><p>建议您使用Visual Studio Code来进行前端开发，当然你要是vim大佬可以使用neovim，嗯。</p>
+<p>VSCode:  <a class="link"   target="_blank" rel="noopener" href="https://code.visualstudio.com/" >https://code.visualstudio.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>NeoVim: <a class="link"   target="_blank" rel="noopener" href="https://neovim.io/" >https://neovim.io/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="使用Vite-Webpack脚手架创建工程"><a href="#使用Vite-Webpack脚手架创建工程" class="headerlink" title="使用Vite/Webpack脚手架创建工程"></a>使用Vite/Webpack脚手架创建工程</h3><p>现在推荐使用Vite创建Vue 3版本的工程</p>
+<h4 id="Vite-创建工程"><a href="#Vite-创建工程" class="headerlink" title="Vite: 创建工程"></a>Vite: 创建工程</h4><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd 你要创建工程的路径</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">我常用的脚手架 create-vite，支持多框架：比如Vue, React, Svelte啥的</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这样会自动全局安装脚手架创建工具，否则，手动安装create-vite</span></span><br><span class="line">npm create vite 工程名</span><br><span class="line">yarn create vite 工程名</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者，你只想写Vue, 可以使用官方文档里的脚手架: create-vue</span></span><br><span class="line">npm create vue@3       # Vue 3</span><br><span class="line">npm create vue@2       # Vue 2</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="Webpack-创建工程"><a href="#Webpack-创建工程" class="headerlink" title="Webpack: 创建工程"></a>Webpack: 创建工程</h4><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli # 全局安装vue-cli</span><br><span class="line">yarn global add @vue/cli</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建Vue项目</span></span><br><span class="line">vue create 工程名</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="启动工程"><a href="#启动工程" class="headerlink" title="启动工程"></a>启动工程</h4><p>使用脚手架搭建好后，打开<code>package.json</code>看看<code>scripts</code>里面的命令是啥，然后直接在<code>工程文件夹</code>中打开终端，然后使用<code>npm run dev/serve</code>或者<code>npm start</code>启动，命令是啥就看你的<code>package.json</code>里面写了啥。</p>
+<p>比如，你要启动开发模式，就使用：<code>npm run serve</code>或者<code>yarn run serve</code></p>
+<p>一般地：dev或者serve是开发运行命令，build是打包构建命令</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;serve&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vite&quot;</span><span class="punctuation">,</span>   <span class="comment">// 这是启动开发模式</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vite build&quot;</span> <span class="comment">// 这是打包构建</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>然后如果能成功看到hello欢迎页面，就说明工程创建成功。</p>
+<h2 id="开始写代码！"><a href="#开始写代码！" class="headerlink" title="开始写代码！"></a>开始写代码！</h2><h3 id="Vue的基本用法"><a href="#Vue的基本用法" class="headerlink" title="Vue的基本用法"></a>Vue的基本用法</h3><h4 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h4><p>Vue一般使用<code>.vue</code>后缀的文件作为一个组件，每个组件都有独立的html, js, css，而且可以都在同一个文件里，这使得咱的组件编写不会很混乱。</p>
+<p>现在不管是Vue 2还是Vue 3，都支持两种组件的编写方式:</p>
+<ul>
+<li><p>Options API   选项式API</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">// data() 返回的属性将会成为响应式的状态</span></span><br><span class="line">  <span class="comment">// 并且暴露在 `this` 上</span></span><br><span class="line">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// methods 是一些用来更改状态与触发更新的函数</span></span><br><span class="line">  <span class="comment">// 它们可以在模板中作为事件监听器绑定</span></span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">count</span>++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 生命周期钩子会在组件生命周期的各个不同阶段被调用</span></span><br><span class="line">  <span class="comment">// 例如这个函数就会在组件挂载完成后被调用</span></span><br><span class="line">  <span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`The initial count is <span class="subst">$&#123;<span class="variable language_">this</span>.count&#125;</span>.`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>Composition API 组合式API</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 响应式状态</span></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用来修改状态、触发更新的函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span><br><span class="line">  count.<span class="property">value</span>++</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生命周期钩子</span></span><br><span class="line"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`The initial count is <span class="subst">$&#123;count.value&#125;</span>.`</span>)</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<p>选择你喜欢的方式来写就好。</p>
+<p><strong>PS：本环节展示的代码来源于Vue官网：<a class="link"   target="_blank" rel="noopener" href="https://cn.vuejs.org/" >https://cn.vuejs.org/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></strong></p>
+<h4 id="Vue的基础语法"><a href="#Vue的基础语法" class="headerlink" title="Vue的基础语法"></a>Vue的基础语法</h4><p>Vue是建立在原生基础上的框架，没有脱离原生前端的编码逻辑，只是简化了DOM操作，还有很多原生不方便的东西。</p>
+<p>这篇文档主要用<strong>组合式API</strong>的写法来举例，如果您想学习<strong>选项式API</strong>，可以看看文档，<strong>选项式API</strong>很简单，而<strong>组合式API</strong>更符合现在的开发主流，而且写法更接近原生JavaScript。</p>
+<h5 id="插值语法"><a href="#插值语法" class="headerlink" title="插值语法"></a>插值语法</h5><p>在Vue中，允许使用双花括号：<code>&#123;&#123; &#125;&#125;</code>来对innerText进行插值，类似于<strong>Thymeleaf</strong>，而远远比它方便</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">&quot;ts&quot;</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">import</span> &#123; ref, <span class="title class_">Ref</span> &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> <span class="attr">text</span>: <span class="title class_">Ref</span>&lt;string&gt; = <span class="title function_">ref</span>(<span class="string">&quot;我想玩零：月蚀的假面&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="指令语法"><a href="#指令语法" class="headerlink" title="指令语法"></a>指令语法</h5><p>在Vue里头，指令都是以<code>v-</code>开头，比如<code>v-bind, v-model</code>啥的。</p>
+<p>关于指令语法的使用，请看官网：<a class="link"   target="_blank" rel="noopener" href="https://cn.vuejs.org/api/built-in-directives.html" >https://cn.vuejs.org/api/built-in-directives.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>通过对指令语法的使用，我们可以实现页面的动态渲染，比如你有一个数组，在原生前端中，你需要动态操作dom进行节点的添加，还得把节点手动渲染到容器，非常费劲，而在Vue中，一个<code>v-for</code></p>
+<p>循环遍历就可以解决。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">   &lt;ul&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item, index) in arr&quot; key=&quot;index&quot; &gt;</span><br><span class="line">        &#123;&#123; item &#125;&#125;</span><br><span class="line">  	  &lt;/li&gt;</span><br><span class="line">   &lt;/ul&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script lang=&quot;ts&quot; setup&gt;</span><br><span class="line">  import &#123; ref, Ref &#125; from &quot;vue&quot;;</span><br><span class="line">  </span><br><span class="line">  const arr: Ref&lt;string[]&gt; = ref([</span><br><span class="line">    &quot;临&quot;,&quot;兵&quot;,&quot;斗&quot;,&quot;者&quot;,&quot;皆&quot;,&quot;阵&quot;,&quot;列&quot;,&quot;前&quot;,&quot;行&quot;</span><br><span class="line">  ]);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>这样可以省去大把操作dom的时间。其它指令不在此举例。</p>
+<p>顺便一提，关于v-for，不要在带有输入类dom的场景下使用index作为key，这样会产生问题，不过，在实际开发中，每条数据一般都有一个独立标识id，如果你自己玩的时候没有，那么可以使用nanoid生成。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i nanoid</span><br><span class="line">yarn add nanoid</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h5><p>在Vue中，事件用v-on绑定，其实这也属于指令语法，不过，事件比较特殊，可以单独说说，因为事件咱一般不用<code>v-on:啥啥啥</code>来写，而是简写成<code>@啥啥啥</code>。</p>
+<p>这个不需要单独记忆，原生咋写，你就咋写，只是把规则替换一下就好，举例：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">onclick =&gt; v-on:click =&gt; @click</span><br><span class="line">onchange =&gt; @change</span><br><span class="line">oncontextmenu =&gt; @contextmenu</span><br></pre></td></tr></table></figure></div>
+
+<p>除此之外，对事件的一些特殊处理，vue也提供了<strong>事件修饰符</strong>，比如click事件的阻止冒泡</p>
+<p><code>@click.stop</code>，也就是<code>stopPrepagation()</code>的语法糖(语法糖：可以理解成简写形式)。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.stop =&gt; stopPrepagation()  阻止事件冒泡</span><br><span class="line">.prevent =&gt; preventDefault()  阻止默认事件</span><br><span class="line">其它的需要时可以自行查询</span><br><span class="line"></span><br><span class="line">特殊：</span><br><span class="line">.native  用于组件调用的时候，给一整个组件绑定原生点击事件，此时不加.native不会生效</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h5><p>生命周期回调函数，或者叫**生命周期钩子(Lifecycle Hooks)**，是目前主流前端框架的一个重点，因为生命周期钩子会给我们的开发带来很多方便的东西，比如你想在组件挂载到页面之前，在组件刚刚渲染到页面上时，或是在组件即将从页面上卸载前，进行一些操作，就要用到生命周期钩子。</p>
+<p>以下通过类比<strong>选项式API</strong>和<strong>组合式API</strong>的钩子，可以更好理解Vue的生命周期</p>
+<p>注意<strong>组合式API</strong>的created阶段整合成了同一个生命周期: <code>setup()</code>，而setup是组合式API默认写JavaScript代码的地方，也就是说，你可以直接写进去，不需要单独声明使用生命周期，随时记住，当你使用<strong>组合式API</strong>时，你随时都在setup这个生命周期中，在某些特定逻辑（比如获取组件实例对象）下，你可能会遇到错误的情况，这是因为你的组件还没有挂载，你需要使用onMounted()钩子，而<strong>选项式API</strong>则不用考虑这个问题。</p>
+<ol>
+<li>常用钩子</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">选项式API</th>
+<th>组合式API</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">beforeCreate()</td>
+<td>setup()</td>
+<td>组件实例的数据代理和数据监听器创建前</td>
+</tr>
+<tr>
+<td align="left">created()</td>
+<td>setup()</td>
+<td>组件已经创建数据代理和数据监听器</td>
+</tr>
+<tr>
+<td align="left">beforeMount()</td>
+<td>onBeforeMount()</td>
+<td>组件挂载到页面前</td>
+</tr>
+<tr>
+<td align="left">mounted()</td>
+<td>onMounted()</td>
+<td>组件已经挂载到页面</td>
+</tr>
+<tr>
+<td align="left">beforeUpdate()</td>
+<td>onBeforeUpdate()</td>
+<td>组件更新前</td>
+</tr>
+<tr>
+<td align="left">updated()</td>
+<td>onUpdated()</td>
+<td>组件更新完毕</td>
+</tr>
+</tbody></table>
+<p>特别地:</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项式API(Vue 2)</th>
+<th>选项式API(Vue 3)</th>
+<th>组合式API</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">beforeDestroy()</td>
+<td>beforeUnmount()</td>
+<td>onBeforeUnmount()</td>
+<td>组件即将销毁/卸载前</td>
+</tr>
+<tr>
+<td align="left">destroyed()</td>
+<td>unmounted()</td>
+<td>onUnmounted()</td>
+<td>组件已经销毁/卸载</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><p>路由生命周期(<strong>路由守卫</strong>)</p>
+<p>如果您需要用到vue-router路由库（一般都需要的），那么就可以通过<strong>路由守卫</strong></p>
+<p>beforeEach: 全局前置守卫</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局前置路由钩子</span></span><br><span class="line">router.<span class="title function_">beforeEach</span>(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* to下一个路由路径</span></span><br><span class="line"><span class="comment">* from上一个路由路径</span></span><br><span class="line"><span class="comment">* 需要调用next()放行，否则路由会阻塞</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="title function_">next</span>();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<p>afterEach: 全局后置守卫（类似上面的）</p>
+<p>beforeEnter: 路由内守卫</p>
+<p>是指在单个路由配置的时候也可以设置的钩子函数，其位置就是下面示例中的位置，也就是像Foo这样的组件都存在这样的钩子函数。目前他只有一个钩子函数beforeEnter：</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> <span class="title class_">VueRouter</span>(&#123;</span><br><span class="line">  <span class="attr">routes</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;/foo&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>: <span class="title class_">Foo</span>,</span><br><span class="line">      <span class="attr">beforeEnter</span>: <span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div></li>
+<li><p>其它不常用生命周期</p>
+</li>
+</ol>
+<ul>
+<li>当你让组件 keep-alive(维持启用，当页面不显示该组件时，它也不会被卸载) 以后</li>
+</ul>
+<p>使用这两个钩子进行组件激活时和失活时的操作</p>
+<table>
+<thead>
+<tr>
+<th>选项式API</th>
+<th>组合式API</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>activated()</td>
+<td>onActivated()</td>
+<td>Keep-alive组件显示在页面的那个时候</td>
+</tr>
+<tr>
+<td>deactivated()</td>
+<td>onDeactivated()</td>
+<td>Keep-alive组件从页面消失的那个时候</td>
+</tr>
+</tbody></table>
+<ul>
+<li>nextTick() </li>
+</ul>
+<p>虽然我不知道nextTick是否算作生命周期，但是它也是在特定时间自动被调用的函数</p>
+<p>比如你要在前面说过的情况下，比如在setup或者created生命周期中操作dom，这时我们都知道，组件还没有挂载，这是不可能的，但是nextTick就可以，它一般用于在<strong>数据变化后，要对某个dom进行更新，但是dom还没有被挂载的情况</strong>。这是一个<strong>异步操作</strong>，至于原理，官网的解释是：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue 异步执行 DOM 更新。只要观察到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要。然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际 (已去重的) 工作。Vue 在内部尝试对异步队列使用原生的 Promise.then 和MessageChannel，如果执行环境不支持，会采用 setTimeout(fn, 0)代替。</span><br><span class="line"></span><br><span class="line">例如，当你设置vm.someData = &#x27;new value&#x27;，该组件不会立即重新渲染。当刷新队列时，组件会在事件循环队列清空时的下一个“tick”更新。多数情况我们不需要关心这个过程，但是如果你想在 DOM 状态更新后做点什么，这就可能会有些棘手。虽然 Vue.js 通常鼓励开发人员沿着“数据驱动”的方式思考，避免直接接触 DOM，但是有时我们确实要这么做。为了在数据变化之后等待 Vue 完成更新 DOM ，可以在数据变化之后立即使用Vue.nextTick(callback) 。这样回调函数在 DOM 更新完成后就会调用。</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>错误处理钩子 onErrorCaptured</li>
+</ul>
+<p>选项式API叫做errorCaptured，看到这相信你也能总结出规律。</p>
+<p>可以用这个生命周期钩子来判断你写的代码到底是语法错误还是运行时异常，可以让你快速定位错误。</p>
+<p>未完待续…</p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：使用Vue做一个属于自己的网站吧！</li>
+        <li>本文作者：诡锋</li>
+        <li>创建时间：2023-02-25 17:00:00</li>
+        <li>
+            本文链接：https://vincent-the-gamer.gitee.io/guifeng-blog/2023/02/25/使用Vue做一个自己的网站吧/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/guifeng-blog/tags/Vue/">#Vue</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/guifeng-blog/2023/02/26/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E4%B8%AD%E5%8A%A0%E5%85%A5%E7%9C%8B%E6%9D%BF%E5%A8%98/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">如何在前端页面中加入看板娘</span>
+                                    <span class="post-nav-item">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/guifeng-blog/2023/02/25/%E9%9B%B6%EF%BC%9A%E6%9C%88%E8%9A%80%E7%9A%84%E5%81%87%E9%9D%A2%E6%94%BB%E7%95%A5%E8%A7%86%E9%A2%91%E9%85%8D%E5%A5%97%E6%96%87%E6%A1%A3/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">零：月蚀的假面攻略视频配套文档</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">使用Vue做一个属于自己的网站吧！</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%EF%BC%81%E6%84%8F%EF%BC%81"><span class="nav-text">注！意！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%81"><span class="nav-text">环境搭建！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="nav-text">安装Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Node%E6%8D%A2%E6%BA%90"><span class="nav-text">Node换源</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-text">安装一个代码编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Vite-Webpack%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="nav-text">使用Vite&#x2F;Webpack脚手架创建工程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vite-%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="nav-text">Vite: 创建工程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Webpack-%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="nav-text">Webpack: 创建工程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%B7%A5%E7%A8%8B"><span class="nav-text">启动工程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%86%99%E4%BB%A3%E7%A0%81%EF%BC%81"><span class="nav-text">开始写代码！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-text">Vue的基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91"><span class="nav-text">组件化开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue%E7%9A%84%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">Vue的基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95"><span class="nav-text">插值语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E8%AF%AD%E6%B3%95"><span class="nav-text">指令语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="nav-text">事件绑定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-text">生命周期</span></a></li></ol></li></ol></li></ol></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-regular fa-computer-classic"></i>&nbsp;&nbsp;<a href="/">诡锋</a>
+        </div>
+        
+        <!-- <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br> 
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v1.1.3</a>
+        </div> -->
+        
+        
+        
+            <div id="start_time_div" style="display:none">
+                2023/2/25 13:00:00
+            </div>
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="unfolded-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="right-bottom-tools rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                <i class="fa-regular fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="folded-tools-list">
+        <li class="right-bottom-tools tool-toggle-show flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+
+<script src="/guifeng-blog/js/utils.js"></script>
+
+<script src="/guifeng-blog/js/main.js"></script>
+
+<script src="/guifeng-blog/js/layouts/menu-shrink.js"></script>
+
+<script src="/guifeng-blog/js/tools/go-top-bottom.js"></script>
+
+<script src="/guifeng-blog/js/tools/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/guifeng-blog/js/tools/local-search.js"></script>
+
+
+
+
+    
+<script src="/guifeng-blog/js/tools/code-block.js"></script>
+
+
+
+
+    
+<script src="/guifeng-blog/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/guifeng-blog/js/tools/runtime.js"></script>
+
+    
+<script src="/guifeng-blog/js/layouts/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/guifeng-blog/assets/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/guifeng-blog/js/tools/toc-toggle.js"></script>
+
+<script src="/guifeng-blog/js/libs/anime.min.js"></script>
+
+<script src="/guifeng-blog/js/layouts/toc.js"></script>
+
+<script src="/guifeng-blog/js/plugins/tabs.js"></script>
+
+    
+    
+</div>
+
+
+    
+<script src="/guifeng-blog/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

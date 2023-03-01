@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>诡锋的博客</title>
+  
+  <subtitle>一个喜欢写代码的主机游戏玩家</subtitle>
+  <link href="https://vincent-the-gamer.gitee.io/guifeng-blog/atom.xml" rel="self"/>
+  
+  <link href="https://vincent-the-gamer.gitee.io/guifeng-blog/"/>
+  <updated>2023-03-01T15:54:02.622Z</updated>
+  <id>https://vincent-the-gamer.gitee.io/guifeng-blog/</id>
+  
+  <author>
+    <name>诡锋</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本博客已支持RSS订阅</title>
+    <link href="https://vincent-the-gamer.gitee.io/guifeng-blog/2023/03/01/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%B7%B2%E6%94%AF%E6%8C%81RSS%E8%AE%A2%E9%98%85/"/>
+    <id>https://vincent-the-gamer.gitee.io/guifeng-blog/2023/03/01/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%B7%B2%E6%94%AF%E6%8C%81RSS%E8%AE%A2%E9%98%85/</id>
+    <published>2023-03-01T15:53:00.000Z</published>
+    <updated>2023-03-01T15:54:02.622Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="博客功能介绍" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/categories/%E5%8D%9A%E5%AE%A2%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何在前端页面中加入看板娘</title>
+    <link href="https://vincent-the-gamer.gitee.io/guifeng-blog/2023/02/26/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E4%B8%AD%E5%8A%A0%E5%85%A5%E7%9C%8B%E6%9D%BF%E5%A8%98/"/>
+    <id>https://vincent-the-gamer.gitee.io/guifeng-blog/2023/02/26/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E4%B8%AD%E5%8A%A0%E5%85%A5%E7%9C%8B%E6%9D%BF%E5%A8%98/</id>
+    <published>2023-02-26T08:11:00.000Z</published>
+    <updated>2023-03-01T15:25:09.229Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="娱乐" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/categories/%E5%89%8D%E7%AB%AF/%E5%A8%B1%E4%B9%90/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用Vue做一个属于自己的网站吧！</title>
+    <link href="https://vincent-the-gamer.gitee.io/guifeng-blog/2023/02/25/%E4%BD%BF%E7%94%A8Vue%E5%81%9A%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99%E5%90%A7/"/>
+    <id>https://vincent-the-gamer.gitee.io/guifeng-blog/2023/02/25/%E4%BD%BF%E7%94%A8Vue%E5%81%9A%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99%E5%90%A7/</id>
+    <published>2023-02-25T09:00:00.000Z</published>
+    <updated>2023-03-01T15:34:59.747Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="框架" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="Vue" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>零：月蚀的假面攻略视频配套文档</title>
+    <link href="https://vincent-the-gamer.gitee.io/guifeng-blog/2023/02/25/%E9%9B%B6%EF%BC%9A%E6%9C%88%E8%9A%80%E7%9A%84%E5%81%87%E9%9D%A2%E6%94%BB%E7%95%A5%E8%A7%86%E9%A2%91%E9%85%8D%E5%A5%97%E6%96%87%E6%A1%A3/"/>
+    <id>https://vincent-the-gamer.gitee.io/guifeng-blog/2023/02/25/%E9%9B%B6%EF%BC%9A%E6%9C%88%E8%9A%80%E7%9A%84%E5%81%87%E9%9D%A2%E6%94%BB%E7%95%A5%E8%A7%86%E9%A2%91%E9%85%8D%E5%A5%97%E6%96%87%E6%A1%A3/</id>
+    <published>2023-02-25T07:42:00.000Z</published>
+    <updated>2023-03-01T15:26:19.706Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="游戏攻略" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/categories/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/"/>
+    
+    <category term="零系列" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/categories/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E9%9B%B6%E7%B3%BB%E5%88%97/"/>
+    
+    <category term="零：月蚀的假面" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/categories/%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/%E9%9B%B6%E7%B3%BB%E5%88%97/%E9%9B%B6%EF%BC%9A%E6%9C%88%E8%9A%80%E7%9A%84%E5%81%87%E9%9D%A2/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>抛弃Vuex和Redux, 使用Pinia和Zustand</title>
+    <link href="https://vincent-the-gamer.gitee.io/guifeng-blog/2023/02/25/%E6%8A%9B%E5%BC%83Redux,%20%E4%BD%BF%E7%94%A8Zustand/"/>
+    <id>https://vincent-the-gamer.gitee.io/guifeng-blog/2023/02/25/%E6%8A%9B%E5%BC%83Redux,%20%E4%BD%BF%E7%94%A8Zustand/</id>
+    <published>2023-02-25T06:44:00.000Z</published>
+    <updated>2023-03-01T15:33:45.417Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="工具" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/categories/%E5%89%8D%E7%AB%AF/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Vue" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/tags/Vue/"/>
+    
+    <category term="React" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/tags/React/"/>
+    
+    <category term="Pinia" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/tags/Pinia/"/>
+    
+    <category term="Zustand" scheme="https://vincent-the-gamer.gitee.io/guifeng-blog/tags/Zustand/"/>
+    
+  </entry>
+  
+</feed>

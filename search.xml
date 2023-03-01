@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>使用Vue做一个属于自己的网站吧！</title>
+    <url>/guifeng-blog/2023/02/25/%E4%BD%BF%E7%94%A8Vue%E5%81%9A%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99%E5%90%A7/</url>
+    <content><![CDATA[<h2 id="注！意！"><a href="#注！意！" class="headerlink" title="注！意！"></a>注！意！</h2><p>本文是为了只会<strong>前端三件套</strong>（HTML + CSS + JavaScript），但是不会Vue的人准备的，大佬请无视无视ε==(づ′▽`)づ</p>
+<p>不会<strong>前端三件套</strong>的，建议先去学习基础。</p>
+<h2 id="环境搭建！"><a href="#环境搭建！" class="headerlink" title="环境搭建！"></a>环境搭建！</h2><p>咱不再赘述Vue是啥，是干啥的，它奏是个前端框架！！！</p>
+<p>想了解Vue是啥的请看Vue官方文档: <a class="link"   href="https://vuejs.bootcss.com/guide/" >https://vuejs.bootcss.com/guide/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>啊？你问我前端是啥？别问，问就是：<del>在前面端菜，简称前端</del> 前端一般是指Web前端，也就是使用HTML + CSS + JavaScript来开发的用户界面 (不限于网页，现在还包括各大PC端App和移动端App)。</p>
+<p><strong>注意，前端是Web前端的习惯叫法，不代表前端只有Web前端，比如你用Unity或者虚幻做一个游戏场景和GUI，这也叫前端。</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../images/vue%E6%96%87%E6%A1%A3.png"
+                      alt="Vue中文文档"
+                ></p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>这一步不用说，如果你想真真正正做一个自己的网站，那你必定要用实际开发的方式来写，因为这样会很舒服，你用着外部引入的script标签，然后在html文件里头去写，会很难受</p>
+<p>下载Node.js: <a class="link"   href="http://nodejs.p2hp.com/" >http://nodejs.p2hp.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>安装过程网上有很多教程，不再赘述，请搜索：Node.js安装教程， 主要注意环境变量的配置（Node.js的安装器好像自带了Add to PATH，无需手动配置)</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../images/nodejs.png"
+                      alt="Node.js中文网"
+                ></p>
+<h4 id="Node换源"><a href="#Node换源" class="headerlink" title="Node换源"></a>Node换源</h4><p>由于咱的网络环境特殊，使用淘宝镜像可以快速安装依赖</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set registry https://registry.npmmirror.com/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果使用yarn安装依赖包</span></span><br><span class="line">yarn config set registry https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="安装一个代码编辑器"><a href="#安装一个代码编辑器" class="headerlink" title="安装一个代码编辑器"></a>安装一个代码编辑器</h3><p>建议您使用Visual Studio Code来进行前端开发，当然你要是vim大佬可以使用neovim，嗯。</p>
+<p>VSCode:  <a class="link"   href="https://code.visualstudio.com/" >https://code.visualstudio.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>NeoVim: <a class="link"   href="https://neovim.io/" >https://neovim.io/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="使用Vite-Webpack脚手架创建工程"><a href="#使用Vite-Webpack脚手架创建工程" class="headerlink" title="使用Vite/Webpack脚手架创建工程"></a>使用Vite/Webpack脚手架创建工程</h3><p>现在推荐使用Vite创建Vue 3版本的工程</p>
+<h4 id="Vite-创建工程"><a href="#Vite-创建工程" class="headerlink" title="Vite: 创建工程"></a>Vite: 创建工程</h4><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">cd 你要创建工程的路径</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">我常用的脚手架 create-vite，支持多框架：比如Vue, React, Svelte啥的</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这样会自动全局安装脚手架创建工具，否则，手动安装create-vite</span></span><br><span class="line">npm create vite 工程名</span><br><span class="line">yarn create vite 工程名</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者，你只想写Vue, 可以使用官方文档里的脚手架: create-vue</span></span><br><span class="line">npm create vue@3       # Vue 3</span><br><span class="line">npm create vue@2       # Vue 2</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="Webpack-创建工程"><a href="#Webpack-创建工程" class="headerlink" title="Webpack: 创建工程"></a>Webpack: 创建工程</h4><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli # 全局安装vue-cli</span><br><span class="line">yarn global add @vue/cli</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建Vue项目</span></span><br><span class="line">vue create 工程名</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="启动工程"><a href="#启动工程" class="headerlink" title="启动工程"></a>启动工程</h4><p>使用脚手架搭建好后，打开<code>package.json</code>看看<code>scripts</code>里面的命令是啥，然后直接在<code>工程文件夹</code>中打开终端，然后使用<code>npm run dev/serve</code>或者<code>npm start</code>启动，命令是啥就看你的<code>package.json</code>里面写了啥。</p>
+<p>比如，你要启动开发模式，就使用：<code>npm run serve</code>或者<code>yarn run serve</code></p>
+<p>一般地：dev或者serve是开发运行命令，build是打包构建命令</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;serve&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vite&quot;</span><span class="punctuation">,</span>   <span class="comment">// 这是启动开发模式</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vite build&quot;</span> <span class="comment">// 这是打包构建</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>然后如果能成功看到hello欢迎页面，就说明工程创建成功。</p>
+<h2 id="开始写代码！"><a href="#开始写代码！" class="headerlink" title="开始写代码！"></a>开始写代码！</h2><h3 id="Vue的基本用法"><a href="#Vue的基本用法" class="headerlink" title="Vue的基本用法"></a>Vue的基本用法</h3><h4 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h4><p>Vue一般使用<code>.vue</code>后缀的文件作为一个组件，每个组件都有独立的html, js, css，而且可以都在同一个文件里，这使得咱的组件编写不会很混乱。</p>
+<p>现在不管是Vue 2还是Vue 3，都支持两种组件的编写方式:</p>
+<ul>
+<li><p>Options API   选项式API</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">// data() 返回的属性将会成为响应式的状态</span></span><br><span class="line">  <span class="comment">// 并且暴露在 `this` 上</span></span><br><span class="line">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// methods 是一些用来更改状态与触发更新的函数</span></span><br><span class="line">  <span class="comment">// 它们可以在模板中作为事件监听器绑定</span></span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">count</span>++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 生命周期钩子会在组件生命周期的各个不同阶段被调用</span></span><br><span class="line">  <span class="comment">// 例如这个函数就会在组件挂载完成后被调用</span></span><br><span class="line">  <span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`The initial count is <span class="subst">$&#123;<span class="variable language_">this</span>.count&#125;</span>.`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>Composition API 组合式API</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; ref, onMounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 响应式状态</span></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用来修改状态、触发更新的函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">increment</span>(<span class="params"></span>) &#123;</span><br><span class="line">  count.<span class="property">value</span>++</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生命周期钩子</span></span><br><span class="line"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`The initial count is <span class="subst">$&#123;count.value&#125;</span>.`</span>)</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span>Count is: &#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<p>选择你喜欢的方式来写就好。</p>
+<p><strong>PS：本环节展示的代码来源于Vue官网：<a class="link"   href="https://cn.vuejs.org/" >https://cn.vuejs.org/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></strong></p>
+<h4 id="Vue的基础语法"><a href="#Vue的基础语法" class="headerlink" title="Vue的基础语法"></a>Vue的基础语法</h4><p>Vue是建立在原生基础上的框架，没有脱离原生前端的编码逻辑，只是简化了DOM操作，还有很多原生不方便的东西。</p>
+<p>这篇文档主要用<strong>组合式API</strong>的写法来举例，如果您想学习<strong>选项式API</strong>，可以看看文档，<strong>选项式API</strong>很简单，而<strong>组合式API</strong>更符合现在的开发主流，而且写法更接近原生JavaScript。</p>
+<h5 id="插值语法"><a href="#插值语法" class="headerlink" title="插值语法"></a>插值语法</h5><p>在Vue中，允许使用双花括号：<code>&#123;&#123; &#125;&#125;</code>来对innerText进行插值，类似于<strong>Thymeleaf</strong>，而远远比它方便</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">&quot;ts&quot;</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">import</span> &#123; ref, <span class="title class_">Ref</span> &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">const</span> <span class="attr">text</span>: <span class="title class_">Ref</span>&lt;string&gt; = <span class="title function_">ref</span>(<span class="string">&quot;我想玩零：月蚀的假面&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="指令语法"><a href="#指令语法" class="headerlink" title="指令语法"></a>指令语法</h5><p>在Vue里头，指令都是以<code>v-</code>开头，比如<code>v-bind, v-model</code>啥的。</p>
+<p>关于指令语法的使用，请看官网：<a class="link"   href="https://cn.vuejs.org/api/built-in-directives.html" >https://cn.vuejs.org/api/built-in-directives.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>通过对指令语法的使用，我们可以实现页面的动态渲染，比如你有一个数组，在原生前端中，你需要动态操作dom进行节点的添加，还得把节点手动渲染到容器，非常费劲，而在Vue中，一个<code>v-for</code></p>
+<p>循环遍历就可以解决。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">   &lt;ul&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item, index) in arr&quot; key=&quot;index&quot; &gt;</span><br><span class="line">        &#123;&#123; item &#125;&#125;</span><br><span class="line">  	  &lt;/li&gt;</span><br><span class="line">   &lt;/ul&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script lang=&quot;ts&quot; setup&gt;</span><br><span class="line">  import &#123; ref, Ref &#125; from &quot;vue&quot;;</span><br><span class="line">  </span><br><span class="line">  const arr: Ref&lt;string[]&gt; = ref([</span><br><span class="line">    &quot;临&quot;,&quot;兵&quot;,&quot;斗&quot;,&quot;者&quot;,&quot;皆&quot;,&quot;阵&quot;,&quot;列&quot;,&quot;前&quot;,&quot;行&quot;</span><br><span class="line">  ]);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>这样可以省去大把操作dom的时间。其它指令不在此举例。</p>
+<p>顺便一提，关于v-for，不要在带有输入类dom的场景下使用index作为key，这样会产生问题，不过，在实际开发中，每条数据一般都有一个独立标识id，如果你自己玩的时候没有，那么可以使用nanoid生成。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">npm i nanoid</span><br><span class="line">yarn add nanoid</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h5><p>在Vue中，事件用v-on绑定，其实这也属于指令语法，不过，事件比较特殊，可以单独说说，因为事件咱一般不用<code>v-on:啥啥啥</code>来写，而是简写成<code>@啥啥啥</code>。</p>
+<p>这个不需要单独记忆，原生咋写，你就咋写，只是把规则替换一下就好，举例：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">onclick =&gt; v-on:click =&gt; @click</span><br><span class="line">onchange =&gt; @change</span><br><span class="line">oncontextmenu =&gt; @contextmenu</span><br></pre></td></tr></table></figure></div>
+
+<p>除此之外，对事件的一些特殊处理，vue也提供了<strong>事件修饰符</strong>，比如click事件的阻止冒泡</p>
+<p><code>@click.stop</code>，也就是<code>stopPrepagation()</code>的语法糖(语法糖：可以理解成简写形式)。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">.stop =&gt; stopPrepagation()  阻止事件冒泡</span><br><span class="line">.prevent =&gt; preventDefault()  阻止默认事件</span><br><span class="line">其它的需要时可以自行查询</span><br><span class="line"></span><br><span class="line">特殊：</span><br><span class="line">.native  用于组件调用的时候，给一整个组件绑定原生点击事件，此时不加.native不会生效</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h5><p>生命周期回调函数，或者叫**生命周期钩子(Lifecycle Hooks)**，是目前主流前端框架的一个重点，因为生命周期钩子会给我们的开发带来很多方便的东西，比如你想在组件挂载到页面之前，在组件刚刚渲染到页面上时，或是在组件即将从页面上卸载前，进行一些操作，就要用到生命周期钩子。</p>
+<p>以下通过类比<strong>选项式API</strong>和<strong>组合式API</strong>的钩子，可以更好理解Vue的生命周期</p>
+<p>注意<strong>组合式API</strong>的created阶段整合成了同一个生命周期: <code>setup()</code>，而setup是组合式API默认写JavaScript代码的地方，也就是说，你可以直接写进去，不需要单独声明使用生命周期，随时记住，当你使用<strong>组合式API</strong>时，你随时都在setup这个生命周期中，在某些特定逻辑（比如获取组件实例对象）下，你可能会遇到错误的情况，这是因为你的组件还没有挂载，你需要使用onMounted()钩子，而<strong>选项式API</strong>则不用考虑这个问题。</p>
+<ol>
+<li>常用钩子</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">选项式API</th>
+<th>组合式API</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">beforeCreate()</td>
+<td>setup()</td>
+<td>组件实例的数据代理和数据监听器创建前</td>
+</tr>
+<tr>
+<td align="left">created()</td>
+<td>setup()</td>
+<td>组件已经创建数据代理和数据监听器</td>
+</tr>
+<tr>
+<td align="left">beforeMount()</td>
+<td>onBeforeMount()</td>
+<td>组件挂载到页面前</td>
+</tr>
+<tr>
+<td align="left">mounted()</td>
+<td>onMounted()</td>
+<td>组件已经挂载到页面</td>
+</tr>
+<tr>
+<td align="left">beforeUpdate()</td>
+<td>onBeforeUpdate()</td>
+<td>组件更新前</td>
+</tr>
+<tr>
+<td align="left">updated()</td>
+<td>onUpdated()</td>
+<td>组件更新完毕</td>
+</tr>
+</tbody></table>
+<p>特别地:</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项式API(Vue 2)</th>
+<th>选项式API(Vue 3)</th>
+<th>组合式API</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">beforeDestroy()</td>
+<td>beforeUnmount()</td>
+<td>onBeforeUnmount()</td>
+<td>组件即将销毁/卸载前</td>
+</tr>
+<tr>
+<td align="left">destroyed()</td>
+<td>unmounted()</td>
+<td>onUnmounted()</td>
+<td>组件已经销毁/卸载</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><p>路由生命周期(<strong>路由守卫</strong>)</p>
+<p>如果您需要用到vue-router路由库（一般都需要的），那么就可以通过<strong>路由守卫</strong></p>
+<p>beforeEach: 全局前置守卫</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//全局前置路由钩子</span></span><br><span class="line">router.<span class="title function_">beforeEach</span>(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* to下一个路由路径</span></span><br><span class="line"><span class="comment">* from上一个路由路径</span></span><br><span class="line"><span class="comment">* 需要调用next()放行，否则路由会阻塞</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="title function_">next</span>();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<p>afterEach: 全局后置守卫（类似上面的）</p>
+<p>beforeEnter: 路由内守卫</p>
+<p>是指在单个路由配置的时候也可以设置的钩子函数，其位置就是下面示例中的位置，也就是像Foo这样的组件都存在这样的钩子函数。目前他只有一个钩子函数beforeEnter：</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> <span class="title class_">VueRouter</span>(&#123;</span><br><span class="line">  <span class="attr">routes</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;/foo&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>: <span class="title class_">Foo</span>,</span><br><span class="line">      <span class="attr">beforeEnter</span>: <span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div></li>
+<li><p>其它不常用生命周期</p>
+</li>
+</ol>
+<ul>
+<li>当你让组件 keep-alive(维持启用，当页面不显示该组件时，它也不会被卸载) 以后</li>
+</ul>
+<p>使用这两个钩子进行组件激活时和失活时的操作</p>
+<table>
+<thead>
+<tr>
+<th>选项式API</th>
+<th>组合式API</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>activated()</td>
+<td>onActivated()</td>
+<td>Keep-alive组件显示在页面的那个时候</td>
+</tr>
+<tr>
+<td>deactivated()</td>
+<td>onDeactivated()</td>
+<td>Keep-alive组件从页面消失的那个时候</td>
+</tr>
+</tbody></table>
+<ul>
+<li>nextTick() </li>
+</ul>
+<p>虽然我不知道nextTick是否算作生命周期，但是它也是在特定时间自动被调用的函数</p>
+<p>比如你要在前面说过的情况下，比如在setup或者created生命周期中操作dom，这时我们都知道，组件还没有挂载，这是不可能的，但是nextTick就可以，它一般用于在<strong>数据变化后，要对某个dom进行更新，但是dom还没有被挂载的情况</strong>。这是一个<strong>异步操作</strong>，至于原理，官网的解释是：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Vue 异步执行 DOM 更新。只要观察到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要。然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际 (已去重的) 工作。Vue 在内部尝试对异步队列使用原生的 Promise.then 和MessageChannel，如果执行环境不支持，会采用 setTimeout(fn, 0)代替。</span><br><span class="line"></span><br><span class="line">例如，当你设置vm.someData = &#x27;new value&#x27;，该组件不会立即重新渲染。当刷新队列时，组件会在事件循环队列清空时的下一个“tick”更新。多数情况我们不需要关心这个过程，但是如果你想在 DOM 状态更新后做点什么，这就可能会有些棘手。虽然 Vue.js 通常鼓励开发人员沿着“数据驱动”的方式思考，避免直接接触 DOM，但是有时我们确实要这么做。为了在数据变化之后等待 Vue 完成更新 DOM ，可以在数据变化之后立即使用Vue.nextTick(callback) 。这样回调函数在 DOM 更新完成后就会调用。</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>错误处理钩子 onErrorCaptured</li>
+</ul>
+<p>选项式API叫做errorCaptured，看到这相信你也能总结出规律。</p>
+<p>可以用这个生命周期钩子来判断你写的代码到底是语法错误还是运行时异常，可以让你快速定位错误。</p>
+<p>未完待续…</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>框架</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何在前端页面中加入看板娘</title>
+    <url>/guifeng-blog/2023/02/26/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E4%B8%AD%E5%8A%A0%E5%85%A5%E7%9C%8B%E6%9D%BF%E5%A8%98/</url>
+    <content><![CDATA[<h2 id="演示图片"><a href="#演示图片" class="headerlink" title="演示图片"></a>演示图片</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../images/%E7%9C%8B%E6%9D%BF%E5%A8%98%E6%BC%94%E7%A4%BA.png"
+                     
+                ></p>
+<h2 id="下载看板娘"><a href="#下载看板娘" class="headerlink" title="下载看板娘"></a>下载看板娘</h2><p>本博客采用的是大佬stevenjoezhang的看板娘</p>
+<p>下载看板娘： <a class="link"   href="https://github.com/stevenjoezhang/live2d-widget" >https://github.com/stevenjoezhang/live2d-widget <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>解压，得到一个文件夹，改名为<code>live2d-widget</code>，方便后续引入。</p>
+<h2 id="把看板娘加入到页面中"><a href="#把看板娘加入到页面中" class="headerlink" title="把看板娘加入到页面中"></a>把看板娘加入到页面中</h2><ol>
+<li><p>打开前面解压的文件，修改autoload.js</p>
+<p>前面几行的路径改成绝对路径，不要用这个cdn，jsdelivr现在好像不管用了，反正我这跳到了raw.githubusercontent导致用不了了。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// live2d_path 参数建议使用绝对路径</span></span><br><span class="line"><span class="comment">// const live2d_path = &quot;https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/&quot;;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> live2d_path = <span class="string">&quot;你的路径/live2d-widget/&quot;</span>;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>修改下面的代码，用api加载模型，还是一样的道理，把CDN注掉，CDN加载不出模型</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 加载 waifu.css live2d.min.js waifu-tips.js</span></span><br><span class="line"><span class="keyword">if</span> (screen.<span class="property">width</span> &gt;= <span class="number">768</span>) &#123;</span><br><span class="line">	<span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">		<span class="title function_">loadExternalResource</span>(live2d_path + <span class="string">&quot;waifu.css&quot;</span>, <span class="string">&quot;css&quot;</span>),</span><br><span class="line">		<span class="title function_">loadExternalResource</span>(live2d_path + <span class="string">&quot;live2d.min.js&quot;</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">		<span class="title function_">loadExternalResource</span>(live2d_path + <span class="string">&quot;waifu-tips.js&quot;</span>, <span class="string">&quot;js&quot;</span>)</span><br><span class="line">	]).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">		<span class="comment">// 配置选项的具体用法见 README.md</span></span><br><span class="line">		<span class="title function_">initWidget</span>(&#123;</span><br><span class="line">			<span class="attr">waifuPath</span>: live2d_path + <span class="string">&quot;waifu-tips.json&quot;</span>,</span><br><span class="line">			<span class="attr">apiPath</span>: <span class="string">&quot;https://live2d.fghrsh.net/api/&quot;</span>,</span><br><span class="line">			<span class="comment">// cdnPath: &quot;https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/&quot;,</span></span><br><span class="line">			<span class="attr">tools</span>: [<span class="string">&quot;hitokoto&quot;</span>, <span class="string">&quot;asteroids&quot;</span>, <span class="string">&quot;switch-model&quot;</span>, <span class="string">&quot;switch-texture&quot;</span>, <span class="string">&quot;photo&quot;</span>, <span class="string">&quot;info&quot;</span>, <span class="string">&quot;quit&quot;</span>]</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>在页面引入, 使用静态引入方式，不管是原生html，还是前端框架，找到html入口文件，在head中引入autoload.js</p>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 建议使用绝对路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;你的路径/live2d-widget/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="自定义样式"><a href="#自定义样式" class="headerlink" title="自定义样式"></a>自定义样式</h2><p>打开waifu.css，可以修改样式，比如：</p>
+<p>看板娘默认是<strong>出现在左边</strong>，你可以通过修改如下css让看板娘<strong>显示在右边</strong></p>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line">// 让看板娘显示在左边，就使用原配置，显示在右边就把对应属性改成后面注释的内容</span><br><span class="line"><span class="selector-id">#waifu</span> &#123;</span><br><span class="line">	<span class="attribute">bottom</span>: -<span class="number">1000px</span>;</span><br><span class="line">	<span class="attribute">left</span>: <span class="number">0</span>;   // 这里修改成<span class="attribute">right</span>: <span class="number">0</span>;   注意分号一定要写</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">margin-bottom</span>: -<span class="number">10px</span>;</span><br><span class="line">	<span class="attribute">position</span>: fixed;</span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">3px</span>);</span><br><span class="line">	<span class="attribute">transition</span>: transform .<span class="number">3s</span> ease-in-out, bottom <span class="number">3s</span> ease-in-out;</span><br><span class="line">	<span class="attribute">z-index</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waifu-tool</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#aaa</span>;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">right</span>: -<span class="number">10px</span>;   // 修改成<span class="attribute">left</span>: <span class="number">0</span>;   </span><br><span class="line">	<span class="attribute">top</span>: <span class="number">70px</span>;   </span><br><span class="line">	<span class="attribute">transition</span>: opacity <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>娱乐</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>抛弃Vuex和Redux, 使用Pinia和Zustand</title>
+    <url>/guifeng-blog/2023/02/25/%E6%8A%9B%E5%BC%83Redux,%20%E4%BD%BF%E7%94%A8Zustand/</url>
+    <content><![CDATA[<h2 id="Vuex和Redux恶心人的地方"><a href="#Vuex和Redux恶心人的地方" class="headerlink" title="Vuex和Redux恶心人的地方"></a>Vuex和Redux恶心人的地方</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>自从Pinia出以后，咱就不在Vue上用Vuex了，因为那个mutation感觉很多此一举，现在Pinia出了，可以直接在actions定义方法，在getters定义计算属性了，然后我就想到了Redux也是一样的毛病，你要定义一堆Reducers，贼麻烦，别说React-Redux啥的，那玩意还得封装一个容器组件，折腾。</p>
+<p>于是，咱就在想，React能不能用Pinia，然后我搜了一圈，搜出来一个zustand，用了用还真香。</p>
+<h3 id="Pinia和Zustand是啥？"><a href="#Pinia和Zustand是啥？" class="headerlink" title="Pinia和Zustand是啥？"></a>Pinia和Zustand是啥？</h3><p>次时代状态管理工具咯，Pinia和Zustand真正实现了完全简单化，只需要定义state，和操作这些state的函数，就可以实现响应式数据</p>
+<ul>
+<li><p>Pinia的store定义</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineStore &#125; <span class="keyword">from</span> <span class="string">&quot;pinia&quot;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> use啥啥啥store = <span class="title function_">defineStore</span>(<span class="string">&quot;storeId&quot;</span>, &#123;</span><br><span class="line">  <span class="attr">state</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">       <span class="attr">text</span>: <span class="string">&quot;我去！初音未来！&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">actions</span>: &#123;</span><br><span class="line">    <span class="title function_">setText</span>(<span class="params">text: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">text</span> = text;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">getters</span>: &#123;</span><br><span class="line">    <span class="title function_">getText</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">text</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+
+<p>在组件里使用Pinia创建的store:</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; use啥啥啥store &#125; <span class="keyword">from</span> <span class="string">&quot;你的路径&quot;</span></span><br><span class="line"><span class="keyword">const</span> 啥啥啥store = use啥啥啥<span class="title function_">store</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用函数和属性</span></span><br><span class="line"><span class="keyword">const</span> text = 啥啥啥store.<span class="property">text</span>; <span class="comment">// 直接访问</span></span><br><span class="line"><span class="keyword">const</span> text2 = 啥啥啥store.<span class="property">getText</span>; <span class="comment">// 使用getter</span></span><br><span class="line">啥啥啥store.<span class="title function_">setText</span>(<span class="string">&quot;女神异闻录5&quot;</span>); <span class="comment">// 调用action</span></span><br></pre></td></tr></table></figure></div></li>
+<li><p>Zustand的store定义(注意括号，每一个函数返回一个对象，省略return需要用小括号包裹)</p>
+<div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; create &#125; <span class="keyword">from</span> <span class="string">&quot;zustand&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> use啥啥啥store = <span class="title function_">create</span>(<span class="function">(<span class="params">set, get</span>) =&gt;</span> (&#123;</span><br><span class="line">  <span class="attr">count</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">add</span>: <span class="function">() =&gt;</span> <span class="title function_">set</span>(<span class="function">(<span class="params">state: <span class="built_in">any</span></span>) =&gt;</span> ( &#123;<span class="attr">count</span>: state.<span class="property">count</span> + <span class="number">1</span>&#125; ))</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure></div></li>
+<li><p> 在组件里使用Zustand创建的store:</p>
+</li>
+</ul>
+  <div class="highlight-container" data-rel="Typescript"><figure class="iseeu highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; use啥啥啥store &#125; <span class="keyword">from</span> <span class="string">&quot;你的路径&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 把整个store拿过来, 这样会导致该组件在每一个状态变化时都要进行更新。</span></span><br><span class="line"><span class="keyword">const</span> 啥啥啥store = use啥啥啥<span class="title function_">store</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 按需使用函数和属性, 这样就只有使用到的值改变时，组件会更新。</span></span><br><span class="line"><span class="keyword">const</span> count = use啥啥啥<span class="title function_">store</span>(<span class="function">(<span class="params">state: <span class="built_in">any</span></span>) =&gt;</span> state.<span class="property">count</span>); </span><br><span class="line"><span class="keyword">const</span> add = use啥啥啥<span class="title function_">store</span>(<span class="function">(<span class="params">state: <span class="built_in">any</span></span>) =&gt;</span> state.<span class="property">add</span>);</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>只能说，实属很方便了，反正咱再也不想用Vuex和Redux了，哼╭(╯^╰)╮</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>React</tag>
+        <tag>Pinia</tag>
+        <tag>Zustand</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>零：月蚀的假面攻略视频配套文档</title>
+    <url>/guifeng-blog/2023/02/25/%E9%9B%B6%EF%BC%9A%E6%9C%88%E8%9A%80%E7%9A%84%E5%81%87%E9%9D%A2%E6%94%BB%E7%95%A5%E8%A7%86%E9%A2%91%E9%85%8D%E5%A5%97%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>该文档目前在准备阶段，为接下来出游戏攻略视频做准备</p>
+<p>我的B站：<a class="link"   href="https://space.bilibili.com/3342738" >前往诡锋的B站！！！ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>零：濡鸦之巫女攻略视频：<a class="link"   href="https://www.bilibili.com/video/BV1734y1Z7GE" >https://www.bilibili.com/video/BV1734y1Z7GE <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="初步计划"><a href="#初步计划" class="headerlink" title="初步计划"></a>初步计划</h2><p>本次攻略初步计划在我自己开荒一周目完毕后开始制作，一周目准备在B站直播，<br>然后趁一周目的时候顺便构思一下这次攻略咋做，还有提前收集一些攻略视频需要到的素材。</p>
+]]></content>
+      <categories>
+        <category>游戏攻略</category>
+        <category>零系列</category>
+        <category>零：月蚀的假面</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>本博客已支持RSS订阅</title>
+    <url>/guifeng-blog/2023/03/01/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%B7%B2%E6%94%AF%E6%8C%81RSS%E8%AE%A2%E9%98%85/</url>
+    <content><![CDATA[<h2 id="如何操作"><a href="#如何操作" class="headerlink" title="如何操作"></a>如何操作</h2><p>点击以下的按钮，找到RSS订阅的按钮，鼠标右键点击，选择复制链接地址</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../images/%E5%8D%9A%E5%AE%A2%E4%BB%8B%E7%BB%8D/%E7%AC%AC%E4%B8%80%E5%BC%A0.png"
+                     
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../images/%E5%8D%9A%E5%AE%A2%E4%BB%8B%E7%BB%8D/%E7%AC%AC%E4%BA%8C%E5%BC%A0.png"
+                     
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../images/%E5%8D%9A%E5%AE%A2%E4%BB%8B%E7%BB%8D/%E7%AC%AC%E4%B8%89%E5%BC%A0.png"
+                     
+                ></p>
+<h2 id="RSS阅读器怎么下载使用？"><a href="#RSS阅读器怎么下载使用？" class="headerlink" title="RSS阅读器怎么下载使用？"></a>RSS阅读器怎么下载使用？</h2><h3 id="下载一个irreader"><a href="#下载一个irreader" class="headerlink" title="下载一个irreader"></a>下载一个irreader</h3><p>该下载器支持macOS和Windows桌面端，手机端的我还没研究。。。</p>
+<p>链接：<a class="link"   href="http://irreader.fatecore.com/" >http://irreader.fatecore.com/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="订阅我的博客"><a href="#订阅我的博客" class="headerlink" title="订阅我的博客"></a>订阅我的博客</h4><p>选择： 文件 =&gt; 自定义订阅</p>
+<p>把复制的地址添加进去即可。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../images/%E5%8D%9A%E5%AE%A2%E4%BB%8B%E7%BB%8D/%E8%AE%A2%E9%98%85.png"
+                     
+                ></p>
+]]></content>
+      <categories>
+        <category>博客功能介绍</category>
+      </categories>
+  </entry>
+</search>
