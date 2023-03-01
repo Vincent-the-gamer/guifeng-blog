@@ -215,39 +215,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何在前端页面中加入看板娘</title>
-    <url>/guifeng-blog/2023/02/26/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E4%B8%AD%E5%8A%A0%E5%85%A5%E7%9C%8B%E6%9D%BF%E5%A8%98/</url>
-    <content><![CDATA[<h2 id="演示图片"><a href="#演示图片" class="headerlink" title="演示图片"></a>演示图片</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="../../../../images/%E7%9C%8B%E6%9D%BF%E5%A8%98%E6%BC%94%E7%A4%BA.png"
-                     
-                ></p>
-<h2 id="下载看板娘"><a href="#下载看板娘" class="headerlink" title="下载看板娘"></a>下载看板娘</h2><p>本博客采用的是大佬stevenjoezhang的看板娘</p>
-<p>下载看板娘： <a class="link"   href="https://github.com/stevenjoezhang/live2d-widget" >https://github.com/stevenjoezhang/live2d-widget <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>解压，得到一个文件夹，改名为<code>live2d-widget</code>，方便后续引入。</p>
-<h2 id="把看板娘加入到页面中"><a href="#把看板娘加入到页面中" class="headerlink" title="把看板娘加入到页面中"></a>把看板娘加入到页面中</h2><ol>
-<li><p>打开前面解压的文件，修改autoload.js</p>
-<p>前面几行的路径改成绝对路径，不要用这个cdn，jsdelivr现在好像不管用了，反正我这跳到了raw.githubusercontent导致用不了了。</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// live2d_path 参数建议使用绝对路径</span></span><br><span class="line"><span class="comment">// const live2d_path = &quot;https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/&quot;;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> live2d_path = <span class="string">&quot;你的路径/live2d-widget/&quot;</span>;</span><br></pre></td></tr></table></figure></div></li>
-<li><p>修改下面的代码，用api加载模型，还是一样的道理，把CDN注掉，CDN加载不出模型</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 加载 waifu.css live2d.min.js waifu-tips.js</span></span><br><span class="line"><span class="keyword">if</span> (screen.<span class="property">width</span> &gt;= <span class="number">768</span>) &#123;</span><br><span class="line">	<span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">		<span class="title function_">loadExternalResource</span>(live2d_path + <span class="string">&quot;waifu.css&quot;</span>, <span class="string">&quot;css&quot;</span>),</span><br><span class="line">		<span class="title function_">loadExternalResource</span>(live2d_path + <span class="string">&quot;live2d.min.js&quot;</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">		<span class="title function_">loadExternalResource</span>(live2d_path + <span class="string">&quot;waifu-tips.js&quot;</span>, <span class="string">&quot;js&quot;</span>)</span><br><span class="line">	]).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">		<span class="comment">// 配置选项的具体用法见 README.md</span></span><br><span class="line">		<span class="title function_">initWidget</span>(&#123;</span><br><span class="line">			<span class="attr">waifuPath</span>: live2d_path + <span class="string">&quot;waifu-tips.json&quot;</span>,</span><br><span class="line">			<span class="attr">apiPath</span>: <span class="string">&quot;https://live2d.fghrsh.net/api/&quot;</span>,</span><br><span class="line">			<span class="comment">// cdnPath: &quot;https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/&quot;,</span></span><br><span class="line">			<span class="attr">tools</span>: [<span class="string">&quot;hitokoto&quot;</span>, <span class="string">&quot;asteroids&quot;</span>, <span class="string">&quot;switch-model&quot;</span>, <span class="string">&quot;switch-texture&quot;</span>, <span class="string">&quot;photo&quot;</span>, <span class="string">&quot;info&quot;</span>, <span class="string">&quot;quit&quot;</span>]</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
-<li><p>在页面引入, 使用静态引入方式，不管是原生html，还是前端框架，找到html入口文件，在head中引入autoload.js</p>
-</li>
-</ol>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 建议使用绝对路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;你的路径/live2d-widget/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<h2 id="自定义样式"><a href="#自定义样式" class="headerlink" title="自定义样式"></a>自定义样式</h2><p>打开waifu.css，可以修改样式，比如：</p>
-<p>看板娘默认是<strong>出现在左边</strong>，你可以通过修改如下css让看板娘<strong>显示在右边</strong></p>
-<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line">// 让看板娘显示在左边，就使用原配置，显示在右边就把对应属性改成后面注释的内容</span><br><span class="line"><span class="selector-id">#waifu</span> &#123;</span><br><span class="line">	<span class="attribute">bottom</span>: -<span class="number">1000px</span>;</span><br><span class="line">	<span class="attribute">left</span>: <span class="number">0</span>;   // 这里修改成<span class="attribute">right</span>: <span class="number">0</span>;   注意分号一定要写</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">margin-bottom</span>: -<span class="number">10px</span>;</span><br><span class="line">	<span class="attribute">position</span>: fixed;</span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">3px</span>);</span><br><span class="line">	<span class="attribute">transition</span>: transform .<span class="number">3s</span> ease-in-out, bottom <span class="number">3s</span> ease-in-out;</span><br><span class="line">	<span class="attribute">z-index</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waifu-tool</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#aaa</span>;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">right</span>: -<span class="number">10px</span>;   // 修改成<span class="attribute">left</span>: <span class="number">0</span>;   </span><br><span class="line">	<span class="attribute">top</span>: <span class="number">70px</span>;   </span><br><span class="line">	<span class="attribute">transition</span>: opacity <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>娱乐</category>
-      </categories>
-  </entry>
-  <entry>
     <title>抛弃Vuex和Redux, 使用Pinia和Zustand</title>
     <url>/guifeng-blog/2023/02/25/%E6%8A%9B%E5%BC%83Redux,%20%E4%BD%BF%E7%94%A8Zustand/</url>
     <content><![CDATA[<h2 id="Vuex和Redux恶心人的地方"><a href="#Vuex和Redux恶心人的地方" class="headerlink" title="Vuex和Redux恶心人的地方"></a>Vuex和Redux恶心人的地方</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>自从Pinia出以后，咱就不在Vue上用Vuex了，因为那个mutation感觉很多此一举，现在Pinia出了，可以直接在actions定义方法，在getters定义计算属性了，然后我就想到了Redux也是一样的毛病，你要定义一堆Reducers，贼麻烦，别说React-Redux啥的，那玩意还得封装一个容器组件，折腾。</p>
@@ -282,6 +249,39 @@
       </tags>
   </entry>
   <entry>
+    <title>如何在前端页面中加入看板娘</title>
+    <url>/guifeng-blog/2023/02/26/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E4%B8%AD%E5%8A%A0%E5%85%A5%E7%9C%8B%E6%9D%BF%E5%A8%98/</url>
+    <content><![CDATA[<h2 id="演示图片"><a href="#演示图片" class="headerlink" title="演示图片"></a>演示图片</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../images/%E7%9C%8B%E6%9D%BF%E5%A8%98%E6%BC%94%E7%A4%BA.png"
+                     
+                ></p>
+<h2 id="下载看板娘"><a href="#下载看板娘" class="headerlink" title="下载看板娘"></a>下载看板娘</h2><p>本博客采用的是大佬stevenjoezhang的看板娘</p>
+<p>下载看板娘： <a class="link"   href="https://github.com/stevenjoezhang/live2d-widget" >https://github.com/stevenjoezhang/live2d-widget <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>解压，得到一个文件夹，改名为<code>live2d-widget</code>，方便后续引入。</p>
+<h2 id="把看板娘加入到页面中"><a href="#把看板娘加入到页面中" class="headerlink" title="把看板娘加入到页面中"></a>把看板娘加入到页面中</h2><ol>
+<li><p>打开前面解压的文件，修改autoload.js</p>
+<p>前面几行的路径改成绝对路径，不要用这个cdn，jsdelivr现在好像不管用了，反正我这跳到了raw.githubusercontent导致用不了了。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// live2d_path 参数建议使用绝对路径</span></span><br><span class="line"><span class="comment">// const live2d_path = &quot;https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/&quot;;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> live2d_path = <span class="string">&quot;你的路径/live2d-widget/&quot;</span>;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>修改下面的代码，用api加载模型，还是一样的道理，把CDN注掉，CDN加载不出模型</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 加载 waifu.css live2d.min.js waifu-tips.js</span></span><br><span class="line"><span class="keyword">if</span> (screen.<span class="property">width</span> &gt;= <span class="number">768</span>) &#123;</span><br><span class="line">	<span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">		<span class="title function_">loadExternalResource</span>(live2d_path + <span class="string">&quot;waifu.css&quot;</span>, <span class="string">&quot;css&quot;</span>),</span><br><span class="line">		<span class="title function_">loadExternalResource</span>(live2d_path + <span class="string">&quot;live2d.min.js&quot;</span>, <span class="string">&quot;js&quot;</span>),</span><br><span class="line">		<span class="title function_">loadExternalResource</span>(live2d_path + <span class="string">&quot;waifu-tips.js&quot;</span>, <span class="string">&quot;js&quot;</span>)</span><br><span class="line">	]).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">		<span class="comment">// 配置选项的具体用法见 README.md</span></span><br><span class="line">		<span class="title function_">initWidget</span>(&#123;</span><br><span class="line">			<span class="attr">waifuPath</span>: live2d_path + <span class="string">&quot;waifu-tips.json&quot;</span>,</span><br><span class="line">			<span class="attr">apiPath</span>: <span class="string">&quot;https://live2d.fghrsh.net/api/&quot;</span>,</span><br><span class="line">			<span class="comment">// cdnPath: &quot;https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/&quot;,</span></span><br><span class="line">			<span class="attr">tools</span>: [<span class="string">&quot;hitokoto&quot;</span>, <span class="string">&quot;asteroids&quot;</span>, <span class="string">&quot;switch-model&quot;</span>, <span class="string">&quot;switch-texture&quot;</span>, <span class="string">&quot;photo&quot;</span>, <span class="string">&quot;info&quot;</span>, <span class="string">&quot;quit&quot;</span>]</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>在页面引入, 使用静态引入方式，不管是原生html，还是前端框架，找到html入口文件，在head中引入autoload.js</p>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 建议使用绝对路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;你的路径/live2d-widget/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="自定义样式"><a href="#自定义样式" class="headerlink" title="自定义样式"></a>自定义样式</h2><p>打开waifu.css，可以修改样式，比如：</p>
+<p>看板娘默认是<strong>出现在左边</strong>，你可以通过修改如下css让看板娘<strong>显示在右边</strong></p>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line">// 让看板娘显示在左边，就使用原配置，显示在右边就把对应属性改成后面注释的内容</span><br><span class="line"><span class="selector-id">#waifu</span> &#123;</span><br><span class="line">	<span class="attribute">bottom</span>: -<span class="number">1000px</span>;</span><br><span class="line">	<span class="attribute">left</span>: <span class="number">0</span>;   // 这里修改成<span class="attribute">right</span>: <span class="number">0</span>;   注意分号一定要写</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">margin-bottom</span>: -<span class="number">10px</span>;</span><br><span class="line">	<span class="attribute">position</span>: fixed;</span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">3px</span>);</span><br><span class="line">	<span class="attribute">transition</span>: transform .<span class="number">3s</span> ease-in-out, bottom <span class="number">3s</span> ease-in-out;</span><br><span class="line">	<span class="attribute">z-index</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#waifu-tool</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#aaa</span>;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">right</span>: -<span class="number">10px</span>;   // 修改成<span class="attribute">left</span>: <span class="number">0</span>;   </span><br><span class="line">	<span class="attribute">top</span>: <span class="number">70px</span>;   </span><br><span class="line">	<span class="attribute">transition</span>: opacity <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>娱乐</category>
+      </categories>
+  </entry>
+  <entry>
     <title>零：月蚀的假面攻略视频配套文档</title>
     <url>/guifeng-blog/2023/02/25/%E9%9B%B6%EF%BC%9A%E6%9C%88%E8%9A%80%E7%9A%84%E5%81%87%E9%9D%A2%E6%94%BB%E7%95%A5%E8%A7%86%E9%A2%91%E9%85%8D%E5%A5%97%E6%96%87%E6%A1%A3/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>该文档目前在准备阶段，为接下来出游戏攻略视频做准备</p>
@@ -298,23 +298,11 @@
   <entry>
     <title>本博客已支持RSS订阅</title>
     <url>/guifeng-blog/2023/03/01/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%B7%B2%E6%94%AF%E6%8C%81RSS%E8%AE%A2%E9%98%85/</url>
-    <content><![CDATA[<h2 id="如何操作"><a href="#如何操作" class="headerlink" title="如何操作"></a>如何操作</h2><p>点击以下的按钮，找到RSS订阅的按钮，鼠标右键点击，选择复制链接地址</p>
+    <content><![CDATA[<h2 id="如何操作"><a href="#如何操作" class="headerlink" title="如何操作"></a>如何操作</h2><p>「鼠标右键」点击顶部的「订阅博客」按钮，选择复制链接地址，<br>然后继续往下读，准备把链接粘贴到RSS阅读器中。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="../../../../images/%E5%8D%9A%E5%AE%A2%E4%BB%8B%E7%BB%8D/%E7%AC%AC%E4%B8%80%E5%BC%A0.png"
-                     
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="../../../../images/%E5%8D%9A%E5%AE%A2%E4%BB%8B%E7%BB%8D/%E7%AC%AC%E4%BA%8C%E5%BC%A0.png"
-                     
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="../../../../images/%E5%8D%9A%E5%AE%A2%E4%BB%8B%E7%BB%8D/%E7%AC%AC%E4%B8%89%E5%BC%A0.png"
+                     data-src="../../../../images/%E5%8D%9A%E5%AE%A2%E4%BB%8B%E7%BB%8D/%E5%A4%8D%E5%88%B6%E9%93%BE%E6%8E%A5.png"
                      
                 ></p>
 <h2 id="RSS阅读器怎么下载使用？"><a href="#RSS阅读器怎么下载使用？" class="headerlink" title="RSS阅读器怎么下载使用？"></a>RSS阅读器怎么下载使用？</h2><h3 id="下载一个irreader"><a href="#下载一个irreader" class="headerlink" title="下载一个irreader"></a>下载一个irreader</h3><p>该下载器支持macOS和Windows桌面端，手机端的我还没研究。。。</p>
